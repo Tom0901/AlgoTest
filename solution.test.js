@@ -31,9 +31,9 @@ describe("fail cases", () => {
 
 describe("pass cases", () => {
   test("basic string", () => {
-    expect(f("123")).toBe(["321", "312", "231", "213", "132", "123"]);
+    expect(f("123")).toBe([321, 312, 231, 213, 132, 123]);
   });
   test("uncleaned string", () => {
-    expect(f("1D_h64")).toBe(["641", "614", "461", "416", "164", "146"]);
+    expect(f("1D_h64")).toBe([641, 614, 461, 416, 164, 146]);
   });
 });

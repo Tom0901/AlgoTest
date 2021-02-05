@@ -27,13 +27,23 @@ describe("fail cases", () => {
   test("passing an array", () => {
     expect(f([1, 2, 3])).toBe("please pass me a str");
   });
+  test("passing a small str", () => {
+    expect(f("1")).toBe("please pass a str of at least 3 digits");
+  });
 });
 
 describe("pass cases", () => {
   test("basic string", () => {
-    expect(f("123")).toBe([321, 312, 231, 213, 132, 123]);
+    expect(f("123")).toStrictEqual(["321", "312", "231", "213", "132", "123"]);
   });
   test("uncleaned string", () => {
-    expect(f("1D_h64")).toBe([641, 614, 461, 416, 164, 146]);
+    expect(f("1D_h64")).toStrictEqual([
+      "641",
+      "614",
+      "461",
+      "416",
+      "164",
+      "146",
+    ]);
   });
 });
